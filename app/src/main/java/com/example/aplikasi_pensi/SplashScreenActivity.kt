@@ -2,6 +2,7 @@ package com.example.aplikasi_pensi
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -39,7 +40,7 @@ class SplashScreenActivity : ComponentActivity() {
     private fun navigateToMainActivityAfterDelay() {
         val delayMillis = 2000L
         window.decorView.postDelayed({
-            startActivity(Intent(this, IntroductionActivity::class.java))
+            startActivity(Intent(this, MainActivity::class.java))
             finish()
         }, delayMillis)
     }
@@ -74,7 +75,8 @@ fun SplashScreenContent() {
     }
 }
 
-@Preview
+@Preview(showBackground = true)
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES, showBackground = true)
 @Composable
 fun PreviewSplashScreen() {
     AplikasiPensiTheme {
