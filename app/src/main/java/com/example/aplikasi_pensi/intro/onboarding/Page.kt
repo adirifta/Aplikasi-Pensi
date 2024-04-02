@@ -22,13 +22,13 @@ val pages = listOf(
         title = "FITUR CANGGIH",
         description = "Ada fitur AR yang siap menemani pengalaman belanjamu supaya lebih interaktif.",
         image = R.drawable.intro2,
-        imageSizeFraction = 0.5f
+        imageSizeFraction = 0.55f
     ),
     Page(
         title = "EDUKASI DAN KOMUNITAS",
         description = "Belanja saja tidak cukup. \n" +
                 "Temukan konten edukasi seni favoritmu dan bergabung dalam komunitas pencinta seni.",
         image = R.drawable.intro3,
-        imageSizeFraction = 0.5f
+        imageSizeFraction = 0.52f
     )
 )

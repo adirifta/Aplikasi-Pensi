@@ -69,4 +69,8 @@ dependencies {
 
     implementation (libs.androidx.navigation.compose)
     implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.androidx.foundation)
+    implementation(libs.accompanist.pager)
+    implementation(libs.accompanist.pager.indicators)
 }

@@ -31,8 +31,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 
 @Composable
-fun SignIn(navController: NavController){
-
+fun Register(navController: NavController) {
     var email by remember {
         mutableStateOf("")
     }
@@ -62,15 +61,22 @@ fun SignIn(navController: NavController){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Spacer(modifier = Modifier.height(50.dp))
-        Text(text = "Selamat Datang", fontSize = 30.sp, fontWeight = FontWeight.Bold)
-        Spacer(modifier = Modifier.height(2.dp))
         Text(text = "Masuk Sekarang", fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
 
         Spacer(modifier = Modifier.height(15.dp))
         Image(painter = painterResource(id = R.drawable.logo2),
             contentDescription = "Login Image",
-            modifier = Modifier.size(330.dp))
+            modifier = Modifier.size(250.dp))
 
+        Text(text = "Halo selamat datang!!", fontSize = 15.sp, fontWeight = FontWeight.Medium)
+        Spacer(modifier = Modifier.height(2.dp))
+        Text(text = "Mari mulai membuat akun Anda", fontSize = 15.sp, fontWeight = FontWeight.Medium)
+
+        Spacer(modifier = Modifier.height(9.dp))
+        OutlinedTextField(value = email, onValueChange = {email = it}, label = {
+            Text(text = "Nama Lengkap")
+        })
+        Spacer(modifier = Modifier.height(10.dp))
         OutlinedTextField(value = email, onValueChange = {email = it}, label = {
             Text(text = "Email/No. Hp")
         })
@@ -78,17 +84,6 @@ fun SignIn(navController: NavController){
         OutlinedTextField(value = password, onValueChange = {password = it}, label = {
             Text(text = "Kata Sandi")
         }, visualTransformation = PasswordVisualTransformation())
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(start = 260.dp, end = 0.dp)
-        ) {
-            Text(text = "Lupa Kata Sandi?",
-                modifier = Modifier.clickable {  },
-                fontSize = 10.sp,
-                fontWeight = FontWeight.Light)
-        }
 
         Spacer(modifier = Modifier.height(10.dp))
         Row(
@@ -102,11 +97,11 @@ fun SignIn(navController: NavController){
                 fontWeight = FontWeight.Light
             )
             Text(
-                text = "Daftar",
+                text = "Masuk",
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier.clickable {
-                    navController.navigate("register")
+                    navController.navigate("signInScreen")
                 }
             )
         }
@@ -116,29 +111,9 @@ fun SignIn(navController: NavController){
                 .fillMaxWidth(0.5f),
             onClick = {
 //            Log.i("Credential", "Email : $email Password : $password")
-            navController.navigate("home")
+            navController.navigate("signInScreen")
         }) {
-            Text(text = "Masuk")
-        }
-
-        Spacer(modifier = Modifier.height(8.dp))
-        Text(text = "Atau", fontSize = 12.sp, fontWeight = FontWeight.Light)
-
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            horizontalArrangement = Arrangement.Center
-        ) {
-            Image(painter = painterResource(id = R.drawable.google),
-                contentDescription = "Google",
-                modifier = Modifier
-                    .size(60.dp)
-                    .clickable { /* google */ })
-
-            Image(painter = painterResource(id = R.drawable.facebook),
-                contentDescription = "Facebook",
-                modifier = Modifier
-                    .size(60.dp)
-                    .clickable { /* facebook */ })
+            Text(text = "Daftar")
         }
     }
 }
